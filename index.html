@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Background Canvas for Stars and Effects -->
+        <canvas id="effectsCanvas"></canvas>
+
+        <div class="container">
+            <!-- Initial State: Gift Button -->
+            <div id="gift-section" class="active">
+                <div class="gift-wrapper">
+                    <button id="gift-button" aria-label="Open Gift">
+                        <span class="gift-emoji">🎁</span>
+                        <div class="pulsating-glow"></div>
+                    </button>
+                    <p class="instruction">Tap to reveal your surprise</p>
+                </div>
+            </div>
+
+            <!-- Reveal State: Birthday Message and Expansion Sections -->
+            <div id="message-section" class="hidden">
+                <div class="reveal-flash"></div>
+
+                <!-- Main Header Section -->
+                <section class="screen-section first-reveal">
+                    <div class="message-content">
+                        <h1 class="birthday-text">hello loks, wishing you a happy cheers to 18th birthday.</h1>
+                        <p class="sub-text">be blessed by calvin koushik sir</p>
+                    </div>
+                </section>
+
+                <!-- Stats Section -->
+                <section class="screen-section scroll-reveal">
+                    <div class="glass-card stats-hub">
+                        <h2>18 Years of Awesome</h2>
+                        <div class="stats-grid">
+                            <div class="stat-item"><span id="stat-days">0</span> <span>Days</span></div>
+                            <div class="stat-item"><span id="stat-hours">0</span> <span>Hours</span></div>
+                            <div class="stat-item"><span id="stat-minutes">0</span> <span>Minutes</span></div>
+                            <div class="stat-item"><span id="stat-seconds">0</span> <span>Seconds</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- People's Section: Wishes Wall -->
+                <section class="screen-section scroll-reveal">
+                    <h2 class="section-title">Wishes from the Peoples</h2>
+                    <div class="wishes-grid" id="wishes-wall">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </section>
+
+                <!-- Interactive Cake Section -->
+                <section class="screen-section scroll-reveal">
+                    <div class="cake-container">
+                        <div class="cake" id="digital-cake">
+                            <div class="plate"></div>
+                            <div class="layer layer-bottom"></div>
+                            <div class="layer layer-middle"></div>
+                            <div class="layer layer-top"></div>
+                            <div class="candle" id="main-candle">
+                                <div class="flame"></div>
+                            </div>
+                        </div>
+                        <p class="cake-instruction">Click the candle to make a wish!</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional Background Sound -->
+    <audio id="bg-music" loop>
+        <source src="https://cdn.pixabay.com/audio/2022/10/04/audio_3332462e7a.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="pop-sound">
+        <source src="https://cdn.pixabay.com/audio/2021/08/04/audio_14578912e6.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
